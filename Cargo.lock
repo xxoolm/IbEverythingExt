@@ -625,8 +625,8 @@ dependencies = [
 
 [[package]]
 name = "everything-ipc"
-version = "0.1.3"
-source = "git+https://github.com/Chaoses-Ib/IbEverythingLib#476fdd410de817e0fa6420d581b8e39f3cd12c3f"
+version = "0.1.4"
+source = "git+https://github.com/Chaoses-Ib/IbEverythingLib#262bdb30c41614fdf479979a40d392ded2caf686"
 dependencies = [
  "bitflags 2.9.1",
  "bon",
@@ -819,7 +819,7 @@ dependencies = [
 [[package]]
 name = "ib-ime"
 version = "0.1.0"
-source = "git+https://github.com/Chaoses-Ib/ib-shell#2912bc543aaf9fa7c143357955ee3ad0cbbbb2ab"
+source = "git+https://github.com/Chaoses-Ib/ib-shell?branch=feat%2Fitem-hook-3#f65ea836ed0f612ed816d3ea896471ab9f548185"
 dependencies = [
  "bitflags 2.9.1",
  "bon",
@@ -860,7 +860,7 @@ dependencies = [
 [[package]]
 name = "ib-shell"
 version = "0.1.0"
-source = "git+https://github.com/Chaoses-Ib/ib-shell#2912bc543aaf9fa7c143357955ee3ad0cbbbb2ab"
+source = "git+https://github.com/Chaoses-Ib/ib-shell?branch=feat%2Fitem-hook-3#f65ea836ed0f612ed816d3ea896471ab9f548185"
 dependencies = [
  "anyhow",
  "bon",
@@ -876,7 +876,7 @@ dependencies = [
 [[package]]
 name = "ib-shell-item"
 version = "0.1.1"
-source = "git+https://github.com/Chaoses-Ib/ib-shell#2912bc543aaf9fa7c143357955ee3ad0cbbbb2ab"
+source = "git+https://github.com/Chaoses-Ib/ib-shell?branch=feat%2Fitem-hook-3#f65ea836ed0f612ed816d3ea896471ab9f548185"
 dependencies = [
  "anyhow",
  "bitflags 2.9.1",
@@ -899,7 +899,7 @@ dependencies = [
 [[package]]
 name = "ib-shell-verb"
 version = "0.1.0"
-source = "git+https://github.com/Chaoses-Ib/ib-shell#2912bc543aaf9fa7c143357955ee3ad0cbbbb2ab"
+source = "git+https://github.com/Chaoses-Ib/ib-shell?branch=feat%2Fitem-hook-3#f65ea836ed0f612ed816d3ea896471ab9f548185"
 dependencies = [
  "anyhow",
  "bon",
@@ -1535,7 +1535,7 @@ checksum = "b4596b6d070b27117e987119b4dac604f3c58cfb0b191112e24771b2faeac1a6"
 
 [[package]]
 name = "plugin"
-version = "0.11.0-beta"
+version = "0.11.0-beta.2"
 dependencies = [
  "anyhow",
  "bitflags 2.9.1",
