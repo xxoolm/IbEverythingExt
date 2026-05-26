@@ -57,6 +57,8 @@ pub fn read_config(default_if_nonexist: bool) -> Option<Config> {
 /// We use `wait_start()` to avoid load `WindowsCodecs.dll` unnecessarily.
 #[unsafe(no_mangle)]
 extern "C" fn plugin_start() {
+    #[cfg(debug_assertions)]
+    eprintln!("plugin_start");
     if !unsafe { start_on_create } {
         unsafe { wait_start() };
     } else {
@@ -72,10 +74,14 @@ fn plugin_start_inner() {
     if let Ok(version) = everything_ipc::Version::from_current_exe()
         && version.ge_15()
     {
+        #[cfg(debug_assertions)]
+        eprintln!("early_config");
         HANDLER.init_start_with_config(Config::early_config());
         return;
     }
 
+    #[cfg(debug_assertions)]
+    eprintln!("init_start_with_config");
     match read_config(false) {
         Some(config) => HANDLER.init_start_with_config(config),
         None => {

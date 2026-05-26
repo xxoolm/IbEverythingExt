@@ -17,6 +17,7 @@ sig = { path = "sig" }
 
 [patch.crates-io]
 everything-ipc = { git = "https://github.com/Chaoses-Ib/IbEverythingLib" }
+everything-plugin = { git = "https://github.com/Chaoses-Ib/IbEverythingLib" }
 # ib-hook = { git = "https://github.com/Chaoses-Ib/ib-hook" }
 winio = { git = "https://github.com/Chaoses-Ib/winio" }
 

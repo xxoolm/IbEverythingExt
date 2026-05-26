@@ -626,7 +626,7 @@ dependencies = [
 [[package]]
 name = "everything-ipc"
 version = "0.1.4"
-source = "git+https://github.com/Chaoses-Ib/IbEverythingLib#262bdb30c41614fdf479979a40d392ded2caf686"
+source = "git+https://github.com/Chaoses-Ib/IbEverythingLib#858d0d4087e464fe55918ed38cd0e33402f985e7"
 dependencies = [
  "bitflags 2.9.1",
  "bon",
@@ -641,9 +641,8 @@ dependencies = [
 
 [[package]]
 name = "everything-plugin"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "efeadc33058dfb23dbb9e60f8525276aeee319ef161127863560f7f2d428e792"
+version = "0.4.2"
+source = "git+https://github.com/Chaoses-Ib/IbEverythingLib#858d0d4087e464fe55918ed38cd0e33402f985e7"
 dependencies = [
  "anstream",
  "bon",
