@@ -1,9 +1,9 @@
 ﻿# https://www.voidtools.com/forum/viewtopic.php?t=9787
-$version = "1.5.0.1408a"
+$version = "1.5.0.1413b"
 # https://www.voidtools.com/forum/viewtopic.php?f=12&t=9799
-$httpVersion = "1.0.3.4"
-$etpVersion = "1.0.1.4"
-$everythingServerVersion = "1.0.2.3"
+$httpVersion = "1.0.4.5"
+$etpVersion = "1.0.2.5"
+$everythingServerVersion = "1.0.4.5"
 
 pushd target/publish
 
