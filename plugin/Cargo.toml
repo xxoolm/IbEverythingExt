@@ -40,10 +40,10 @@ features = ["pinyin", "romaji", "syntax", "regex"]
 
 [dependencies.ib-ime]
 version = "0.1"
-git = "https://github.com/Chaoses-Ib/ib-shell"
+# git = "https://github.com/Chaoses-Ib/ib-input"
 
 [dependencies.ib-shell]
-version = "0.1"
+version = "0.2"
 features = [
     "item",
     "hook",
