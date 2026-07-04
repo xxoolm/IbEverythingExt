@@ -343,6 +343,7 @@ update:
 - [ib-everything: Rust/C++ port of voidtools' Everything's IPC/plugin SDK.](https://github.com/Chaoses-Ib/ib-everything)
 - [ib-shell: Some desktop environment libraries, mainly for Windows Shell (Windows' built-in desktop environment).](https://github.com/Chaoses-Ib/ib-shell)
 - [ib-hook: Windows binary and system hooking Rust/C libraries](https://github.com/Chaoses-Ib/ib-hook)
+- [ib-update: A lightweight software update library.](https://github.com/Chaoses-Ib/ib-update)
 
 项目：
 - [DirectoryOpus: 一款上手简单、系统集成度高、功能强大的 Windows 文件管理器](https://github.com/Chaoses-Ib/DirectoryOpus)

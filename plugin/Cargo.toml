@@ -18,6 +18,7 @@ anyhow = "1"
 bitflags = "2"
 everything-ipc = { version = "0.1", features = ["pe"] }
 ib-hook = { version = "0.2" }
+nyquest-preset = { version = "0.4", features = ["blocking"] }
 rust-i18n = "3"
 serde = "1"
 serde_json = "1"
@@ -55,6 +56,12 @@ git = "https://github.com/Chaoses-Ib/ib-shell"
 version = "0.1"
 features = ["hook"]
 git = "https://github.com/Chaoses-Ib/ib-shell"
+
+[dependencies.ib-update]
+# Binary size: +179 KiB
+version = "0.1"
+features = ["blocking", "multi-server", "github-extra"]
+# git = "https://github.com/Chaoses-Ib/ib-update"
 
 [build-dependencies]
 vcpkg = "0.2.15"

@@ -2,7 +2,7 @@
 use everything_plugin::{log::debug, ui::winio::prelude::*};
 
 use super::UpdateConfig;
-use crate::{App, HANDLER, search::config::SearchConfig};
+use crate::{App, HANDLER, home::update, search::config::SearchConfig};
 
 pub struct MainModel {
     window: Child<View>,
@@ -10,6 +10,7 @@ pub struct MainModel {
     // 更新设置
     check: Child<CheckBox>,
     prerelease: Child<CheckBox>,
+    update_info: Child<LinkLabel>,
 
     ime_default_off: Child<CheckBox>,
     search_mix_lang: Child<CheckBox>,
@@ -23,6 +24,8 @@ pub struct MainModel {
 pub enum MainMessage {
     Noop,
     CheckClick,
+    CheckUpdate,
+    UpdateInfo(Result<ib_update::github::UpdateInfo, ib_update::github::Error>),
     OptionsPage(OptionsPageMessage<App>),
 }
 
@@ -49,6 +52,10 @@ impl Component for MainModel {
         let mut prerelease = Child::<CheckBox>::init(&window).await?;
         prerelease.set_text(t!("update.prerelease"));
 
+        let mut update_info = Child::<LinkLabel>::init(&window).await?;
+        update_info.set_text(t!("update.checking"));
+        update_info.set_uri("https://github.com/Chaoses-Ib/IbEverythingExt/releases");
+
         let mut ime_default_off = Child::<CheckBox>::init(&window).await?;
         ime_default_off.set_text(t!("search.ime_default_off"));
 
@@ -70,7 +77,7 @@ impl Component for MainModel {
             let config = &a.config().update;
 
             check.set_checked(config.check);
-            prerelease.set_checked(config.prerelease.unwrap_or(false));
+            prerelease.set_checked(config.prerelease());
 
             let config = &a.config().search;
             ime_default_off.set_checked(config.ime_default_off());
@@ -93,6 +100,7 @@ impl Component for MainModel {
             wildcard_complement_separator_as_star,
             wildcard_two_separator_as_star,
             search_syntax,
+            update_info,
         })
     }
 
@@ -102,11 +110,14 @@ impl Component for MainModel {
             self.check => {
                 CheckBoxEvent::Click => MainMessage::CheckClick
             },
-            self.prerelease => {},
+            self.prerelease => {
+                CheckBoxEvent::Click => MainMessage::CheckUpdate
+            },
             self.search_mix_lang => {},
             self.wildcard_complement_separator_as_star => {},
             self.wildcard_two_separator_as_star => {},
             self.ime_default_off => {},
+            self.update_info => {},
         }
     }
 
@@ -119,6 +130,8 @@ impl Component for MainModel {
         Ok(match message {
             MainMessage::Noop => false,
             MainMessage::CheckClick => {
+                sender.post(MainMessage::CheckUpdate);
+
                 let is_enabled = self.check.is_checked()?;
 
                 // 启用/禁用预览版选项
@@ -126,6 +139,41 @@ impl Component for MainModel {
                     .set_enabled(env!("CARGO_PKG_VERSION_PRE").is_empty() && is_enabled);
 
                 false
+            }
+            MainMessage::CheckUpdate => {
+                // TODO: Winio bug?
+                // compio::runtime::spawn({
+                // compio::runtime::spawn_blocking({
+                std::thread::spawn({
+                    let pre = self.prerelease.is_checked()?;
+                    let sender = sender.clone();
+                    move || {
+                        let info = update::check(pre);
+                        sender.post(MainMessage::UpdateInfo(info));
+                    }
+                });
+                false
+            }
+            MainMessage::UpdateInfo(info) => {
+                match info {
+                    Ok(info) => {
+                        if info.has_update() {
+                            let latest = &info.latest().tag;
+                            let current = info.current_version().unwrap();
+                            self.update_info.set_text(t!(
+                                "update.available",
+                                latest = latest,
+                                current = current
+                            ));
+                        } else {
+                            self.update_info.set_text(t!("update.latest"));
+                        }
+                    }
+                    Err(e) => {
+                        self.update_info.set_text(t!("update.check_failed", e = e));
+                    }
+                }
+                true
             }
             MainMessage::OptionsPage(m) => {
                 debug!(?m, "Options page message");
@@ -179,9 +227,17 @@ impl Component for MainModel {
         };
 
         // 主布局
+        let check_width = self.check.preferred_size()?.width;
+        let update_info_width = self.update_info.preferred_size()?.width;
+        let mut check_update = layout! {
+            StackPanel::new(Orient::Horizontal),
+            // TODO: Winio bug
+            self.check => { width: check_width + 8. },
+            self.update_info => { width: update_info_width + 16., margin: Margin::new(0., 0., 0., 4.) },
+        };
         let mut root_layout = layout! {
             Grid::from_str("1*", "auto,auto,1*").unwrap(),
-            self.check => { column: 0, row: 0, margin: m },
+            check_update => { column: 0, row: 0, margin: m },
             self.prerelease => { column: 0, row: 1, margin: m },
             search_layout => { column: 0, row: 2, margin: m },
         };

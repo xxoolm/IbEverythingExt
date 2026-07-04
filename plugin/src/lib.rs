@@ -225,6 +225,7 @@ impl Drop for App {
 }
 
 plugin_main!(App, {
+    nyquest_preset::register();
     PluginHandler::builder()
         .name(env!("CARGO_CRATE_NAME"))
         .description(t!("description"))

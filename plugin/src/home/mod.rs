@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 pub mod options;
+pub mod update;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct UpdateConfig {
@@ -16,5 +17,11 @@ impl Default for UpdateConfig {
             check: true,
             prerelease: None,
         }
+    }
+}
+
+impl UpdateConfig {
+    pub fn prerelease(&self) -> bool {
+        self.prerelease.unwrap_or(false)
     }
 }

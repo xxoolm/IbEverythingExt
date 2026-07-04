@@ -5,6 +5,18 @@ update.check:
 update.prerelease:
   en: Check for pre-releases
   zh: 包括预览版
+update.checking:
+  en: Checking for updates...
+  zh: 正在检查更新...
+update.latest:
+  en: Already up to date
+  zh: 已是最新版本
+update.available:
+  en: "Update available: %{latest} (current: %{current})"
+  zh: "发现新版本: %{latest} (当前版本: %{current})"
+update.check_failed:
+  en: "Failed to check for updates: %{e}"
+  zh: "检查更新失败: %{e}"
 
 search.ime_default_off:
   en: Disable IME by default for search editor
