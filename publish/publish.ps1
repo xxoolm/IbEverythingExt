@@ -25,7 +25,7 @@ $version = ($cargoToml | Select-String 'version = "([^"]+)"').Matches[0].Groups[
 $version | Out-File -FilePath "target/publish/v" -Encoding utf8 -NoNewline
 
 pushd target/publish
-zip -r "IbEverythingExt.v$version.zip" Everything
+zip -r "EvEx.v$version.zip" Everything
 "### 便携整合包 (Portable packages)" >> release.md
 popd
 

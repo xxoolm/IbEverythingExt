@@ -12,7 +12,7 @@ pub fn check(prerelease: bool) -> Result<ib_update::github::UpdateInfo, ib_updat
         // .current_version("0.1")
         .current_version(env!("CARGO_PKG_VERSION"))
         .base_urls(vec![mirror.into(), "https://api.github.com".into()])
-        .user_agent(concat!("IbEverythingExt/", env!("CARGO_PKG_VERSION")))
+        .user_agent(concat!("EvEx/", env!("CARGO_PKG_VERSION")))
         .build_blocking()
         .check_prerelease(prerelease);
     debug!(?info);

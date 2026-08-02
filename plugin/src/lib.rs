@@ -227,14 +227,14 @@ impl Drop for App {
 plugin_main!(App, {
     nyquest_preset::register();
     PluginHandler::builder()
-        .name(env!("CARGO_CRATE_NAME"))
+        .name("EvEx")
         .description(t!("description"))
         .author(env!("CARGO_PKG_AUTHORS"))
         .version(env!("CARGO_PKG_VERSION"))
         .link(env!("CARGO_PKG_HOMEPAGE"))
         .options_pages(vec![
             OptionsPage::builder()
-                .name("IbEverythingExt")
+                .name("EvEx")
                 .load(spawn::<home::options::MainModel>)
                 .build(),
             OptionsPage::builder()

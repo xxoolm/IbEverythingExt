@@ -12,7 +12,7 @@ wget http://www.voidtools.com/Everything-$version.x64.zip
 Expand-Archive -Force Everything-$version.x64.zip -DestinationPath .
 mv Everything.exe Everything/Everything.exe
 $v = Get-Content v
-$zip = "Everything.v${version}_IbEverythingExt_v$v.zip"
+$zip = "Everything.v${version}_EvEx_v$v.zip"
 zip -r $zip Everything
 rm Everything/Everything.exe
 

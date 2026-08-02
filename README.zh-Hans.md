@@ -1,4 +1,4 @@
-# IbEverythingExt
+# EvEx (IbEverythingExt)
 🌐Languages: [English](README.en.md), [简体中文](README.md)
 
 [Everything](https://www.voidtools.com/) 拼音搜索、ローマ字検索、通配符、快速选择、Shell 扩展。 
@@ -31,7 +31,7 @@
 ## 安装
 [便携整合包](https://github.com/Chaoses-Ib/IbEverythingExt/releases)：
 - Everything v1.5 便携整合包
-  - 除了 IbEverythingExt，还内置了 HTTP 服务器、ETP/FTP 服务器、Everything 服务器插件
+  - 除了 EvEx，还内置了 HTTP 服务器、ETP/FTP 服务器、Everything 服务器插件
   - 内置语言包<!--，不过界面中仍有部分英文未汉化-->
   - 初次使用时请在选项的插件（Plug-ins）页中选中 IbEverythingExt，勾选启用插件（Enable plug-in）
   - 默认关闭[命名实例](https://github.com/Chaoses-Ib/IbEverythingExt/issues/5)，便于[第三方程序调用](#第三方程序支持)，如有需要可删除 `No_Alpha_Instance` 文件来还原
@@ -54,7 +54,7 @@
 2. 安装 [VC++ 2022 x64 运行库](https://aka.ms/vs/17/release/vc_redist.x64.exe)  
    （[PowerToys](https://github.com/microsoft/PowerToys) 在安装时会同时安装 VC++ 2022 运行库，如果你安装了 PowerToys 就可以跳过这一步）
 -->
-2. 从 [Releases](https://github.com/Chaoses-Ib/IbEverythingExt/releases) 单独下载 IbEverythingExt 压缩包
+2. 从 [Releases](https://github.com/Chaoses-Ib/IbEverythingExt/releases) 单独下载 EvEx 压缩包
 3. 解压压缩包，将文件放入 Everything 安装目录（ `C:\Program Files\Everything` ）
 4. 重启 Everything
 5. Everything v1.5 用户：在选项的插件（Plug-ins）页中选中 IbEverythingExt，勾选启用插件（Enable plug-in）

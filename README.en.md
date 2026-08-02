@@ -1,4 +1,4 @@
-# IbEverythingExt
+# EvEx (IbEverythingExt)
 🌐Languages: [English](README.en.md), [简体中文](README.md)
 
 [Everything](https://www.voidtools.com/) wildcard, Japanese romaji search, Chinese pinyin search, quick select, Shell extension. 
@@ -31,7 +31,7 @@ Chinese pinyin search | Quick select
 ## Installation
 [Portable packages](https://github.com/Chaoses-Ib/IbEverythingExt/releases)：
 - Everything v1.5 portable package
-  - Besides IbEverythingExt, HTTP Server, ETP/FTP Server, Everything Server plugins are also included.
+  - Besides EvEx, it also includes HTTP Server, ETP/FTP Server, and Everything Server plugins.
   - When using for the first time, please select IbEverythingExt in the Plug-ins page of Options and check "Enable plug-in".
   - [Named instance](https://github.com/Chaoses-Ib/IbEverythingExt/issues/5) is disabled by default to enable [third-party program support](#third-party-program-support). If needed, you can delete the `No_Alpha_Instance` file to restore.
 - Everything v1.4 portable package
@@ -40,7 +40,7 @@ Chinese pinyin search | Quick select
 Manual installation:
 1. Install [Everything](https://www.voidtools.com/forum/viewtopic.php?f=12&t=9787#download) x64 installer or portable version (Other architectures and Lite version aren't supported)
    - For [v1.4](https://www.voidtools.com/en-us/downloads/), the highest supported version is [v1.4.1.1026](https://www.voidtools.com/forum/viewtopic.php?p=75414&sid=e7002e29f531b7c2fbecfa44c817eb0a#p75414). v1.4.1.1027 and later versions block DLL hijacking and cannot load this extension.
-2. Download IbEverythingExt zip from [Releases](https://github.com/Chaoses-Ib/IbEverythingExt/releases)
+2. Download EvEx zip from [Releases](https://github.com/Chaoses-Ib/IbEverythingExt/releases)
 3. Unzip files into Everything's program folder (`C:\Program Files\Everything`)
 4. Restart Everything
 5. For Everything v1.5 users: Select IbEverythingExt in the Plug-ins page of Options and check "Enable plug-in".
