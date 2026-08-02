@@ -1,5 +1,5 @@
 # EvEx (IbEverythingExt)
-🌐Languages: [English](README.en.md), [简体中文](README.md)
+🌐Languages: [English](README.md), [简体中文](README.zh-Hans.md)
 
 [Everything](https://www.voidtools.com/) wildcard, Japanese romaji search, Chinese pinyin search, quick select, Shell extension. 
 

@@ -1,5 +1,5 @@
 # EvEx (IbEverythingExt)
-🌐Languages: [English](README.en.md), [简体中文](README.md)
+🌐Languages: [English](README.md), [简体中文](README.zh-Hans.md)
 
 [Everything](https://www.voidtools.com/) 拼音搜索、ローマ字検索、通配符、快速选择、Shell 扩展。 
 
